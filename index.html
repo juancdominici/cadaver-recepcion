@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Recepción de Textos | Cadáver Exquisito Córdoba
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto+Mono:wght@300&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <h2>Cadáver Exquisito Córdoba</h2>
+        <pre id="description">
+Este es el lugar para compartir lo que escribís, sin capos de la literatura y sin profesores.
+Acá nadie es grandilocuente, acá no hay micrófonos ni escenarios.
+La consigna de la semana es: <em id="consigna"></em>
+        </pre>
+    </header>
+    <form action="submit">
+        <h3>Envianos tu texto</h3>
+        <label for="usuario">¿Con qué nombre querés que publiquemos tu texto?<br>
+            <input type="text" name="usuario" id="usuario" placeholder="Introduce tu usuario o &#34Anon&#34."
+                required></label>
+        <br>
+        
+        <label for="escrito">Tu escrito <br>
+            <textarea name="escrito" id="escrito" cols="30" rows="10" placeholder="Introduce tu escrito." 
+                required></textarea></label>
+        <p>
+            <strong>Te quedan <em id="count"></em> caracteres disponibles.</strong>
+        </p>
+        <br>
+
+        <button type="submit">Enviar!</button>
+    </form>
+    <footer>
+        <p>
+            &copy; Creado por
+            <a href="https://www.instagram.com/cigarrilloscomoleitmotiv" target="_blank"><span class="code">&lt;</span>
+                cigarrilloscomoleitmotiv<span class="code">&#47;&gt;</span></a>
+            para
+            <a href="https://www.instagram.com/cadaverexquisitocordoba/" target="_blank">Colectivo Cadáver
+                Exquisito</a>
+        </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        maxCharacters = 1000;
+
+        $('#count').text(maxCharacters);
+
+        $('textarea').bind('keyup keydown', function () {
+            var count = $('#count');
+            var characters = $(this).val().length;
+
+            if (characters > maxCharacters) {
+                count.addClass('over');
+            } else {
+                count.removeClass('over');
+            }
+
+            count.text(maxCharacters - characters);
+        });
+        </script>
+</body>
+
+</html>
