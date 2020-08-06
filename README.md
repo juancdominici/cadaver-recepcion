@@ -1,4 +1,5 @@
 # cadaver-recepcion
+View @: https://juancdominici.github.io/cadaver-recepcion/
 Una página de recepción de textos para el colectivo Cadáver Exquisito Córdoba.
 
 Actualmente solo tiene el formulario y el CSS con media-queries.
