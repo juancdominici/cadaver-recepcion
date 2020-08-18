@@ -15,22 +15,22 @@
 
 <body>
     <header>
+        <!-- Acá se cambia la consigna y el link a la misma -->
         <h2>Cadáver Exquisito Córdoba</h2>
         <pre id="description">
 Este es el lugar para compartir lo que escribís, sin capos de la literatura y sin profesores.
 Acá nadie es grandilocuente, acá no hay micrófonos ni escenarios.
-La consigna de la semana es: <em id="consigna"></em>
-        </pre>
+La consigna de la semana es: <em id="consigna"><a href="">Batallas</a></em>
+        </pre> 
     </header>
     <form action="submit">
         <h3>Envianos tu texto</h3>
         <label for="usuario">¿Con qué nombre querés que publiquemos tu texto?<br>
-            <input type="text" name="usuario" id="usuario" placeholder="Introduce tu usuario o &#34Anon&#34."
-                required></label>
+            <input type="text" name="usuario" id="usuario" placeholder="Tu usuario o &#34Anon&#34." required></label>
         <br>
-        
+
         <label for="escrito">Tu escrito <br>
-            <textarea name="escrito" id="escrito" cols="30" rows="10" placeholder="Introduce tu escrito." 
+            <textarea maxlength="1000" name="escrito" id="escrito" cols="30" rows="10" placeholder="Tu escrito."
                 required></textarea></label>
         <p>
             <strong>Te quedan <em id="count"></em> caracteres disponibles.</strong>
@@ -67,7 +67,7 @@ La consigna de la semana es: <em id="consigna"></em>
 
             count.text(maxCharacters - characters);
         });
-        </script>
+    </script>
 </body>
 
 </html>
